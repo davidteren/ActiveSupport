@@ -17,5 +17,3 @@ false.present? # => false
 [].present? # => false
 "".present?  # => false
 " ".present? # => false
-
-# Further reading: https://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark
