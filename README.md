@@ -1,14 +1,12 @@
-# ActiveSupport Tips
+# ActiveSupport Learnings
 
-A collection of tips and tricks fROM MY ActiveSupport learnings.
+ActiveSupport learnings.
 
 --- 
+[ActiveSupport#blank? & ActiveSupport#present?](spec/active_support/01_blank_and_present_spec.rb)
 
-### 01 ActiveSupport#present? & ActiveSupport#blank? 
+[ActiveSupport#presence?](spec/active_support/02_presence_spec.rb)
 
-A good way to validate whether an object is Truthy or Falsey in Ruby or Rails apps is to use the ActiveSupport `present?` & `blank?` methods.
 
-Examples: [01_active_support_tips_01.rb](examples/01_active_support_tips_01.rb)
+---
 
-Additional reading:
-- [blank? and present?](https://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark)
