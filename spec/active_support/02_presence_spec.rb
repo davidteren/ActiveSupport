@@ -22,17 +22,23 @@ RSpec.describe "ActiveSupport" do
     it { expect([1, 2].presence).to eq([1, 2]) }
   end
 
-  # OK
-  def return_if_present(thing)
-    thing.present? ? thing : "#{thing.class} : #{thing.inspect} is not present"
-  end
+  module PresenceHelpers
+    module_function
 
-  # Better
-  def return_obect_if_present(thing)
-    thing.presence || "#{thing.class} : #{thing.inspect} is not present"
+    # OK
+    def return_if_present(thing)
+      thing.present? ? thing : "#{thing.class} : #{thing.inspect} is not present"
+    end
+
+    # Better
+    def return_obect_if_present(thing)
+      thing.presence || "#{thing.class} : #{thing.inspect} is not present"
+    end
   end
 
   describe "#return_obect_if_present" do
+    include PresenceHelpers
+
     it { expect(return_obect_if_present(nil)).to eq("NilClass : nil is not present") }
     it { expect(return_obect_if_present(false)).to eq("FalseClass : false is not present") }
     it { expect(return_obect_if_present("")).to eq("String : \"\" is not present") }
